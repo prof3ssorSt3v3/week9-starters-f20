@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre id="data"></pre>
+    <script>
+      let opts = {
+        enableHighAccuracy: true,
+        timeout: 15000, //take up to 15s before giving up
+        maximumAge: 1000 * 60 * 15, //save result in cache for 15 minutes
+      };
+      //https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
+
+      navigator.geolocation.getCurrentPosition(ftw, wtf, opts);
+
+      function ftw(position) {
+        //https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition
+      }
+      function wtf(err) {
+        // {code:1, message: ''}
+        // https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError
+      }
+    </script>
+  </body>
+</html>
